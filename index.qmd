@@ -19,7 +19,7 @@ keywords:
   - Starwars
   - Timeline
 abstract: |
-  Based on work [Quarto Manuscript](https://quarto.org/docs/manuscripts/) work by C.Wickham, (Purves, and Cockett, et. al.): Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ...
+  Based on [Quarto Manuscript](https://quarto.org/docs/manuscripts/) work by Posti.co, C.Wickham, (Purves, and Cockett, et. al.): Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ...
 plain-language-summary: |
   A sample Quarto project demonstrates coding notebooks and report expression rendering...
 key-points:
@@ -35,9 +35,8 @@ number-sections: true
 ---
 
 ```{r}
-#| warning: false
-#| message: false
 library(tidyverse)
+library(gt)
 ```
 
 ## Introduction
@@ -93,12 +92,16 @@ $$ {#eq-poisson}
 
 where $\lambda$ is the rate of births per year. Using @eq-poisson, the probability of a birth in the next $t$ years can be calculated.
 
-Below is a table generated from a data frame and presented via the {gt} backage
+Below is a table generated from a data frame and presented via the {gt} package
 
 ```{r}
 births_df |> 
   select(name, birth_year) |> 
-  gt::gt()
+  gt::gt() |> 
+  gt::tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_column_labels()
+  )
 ```
 
 However, more basic tables can be presented with Markdown as the situation demands.
@@ -127,12 +130,6 @@ La Palma is one of the west most islands in the Volcanic Archipelago of the Cana
 ## Data & Methods {#sec-data-methods}
 
 ## Conclusion
-
-## Slides
-
-``` {.markdown code-preview="slides/hello_world.qmd"}
-## Sample slide deck.  Build > Render Project for optimal viewing.
-```
 
 ## References {.unnumbered}
 
