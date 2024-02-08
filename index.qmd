@@ -77,9 +77,9 @@ avg_years_between_births <- births_df |>
   pull(avg)
 ```
 
-Based on data up to and including 2019, births in the _Star Wars_ multiverse can be said to happen every `{r} round(avg_years_between_births, 1)` years on average.
+Based on data up to and including 2019, births in the *Star Wars* multiverse can be said to happen every `{r} round(avg_years_between_births, 1)` years on average.
 
-In an unrelated gambit to behave in a more scholarly fashion, the authors reference, @lipset1960.  Lipset discussed the nature of democracy and the role of party representation.  His paper highlights the difference in understanding of democracy between sociologists and laymen. While public opinion often emphasizes the freedom of citizens to elect representatives, sociologists focus on the social processes and elites that influence these democratic systems.
+In an unrelated gambit to behave in a more scholarly fashion, the authors reference, @lipset1960. Lipset discussed the nature of democracy and the role of party representation. His paper highlights the difference in understanding of democracy between sociologists and laymen. While public opinion often emphasizes the freedom of citizens to elect representatives, sociologists focus on the social processes and elites that influence these democratic systems.
 
 A sampling of eight births were recorded since star-date zero (@fig-timeline).
 
@@ -131,10 +131,10 @@ La Palma is one of the west most islands in the Volcanic Archipelago of the Cana
 ## Slides
 
 ``` {.markdown code-preview="slides/hello_world.qmd"}
-## Sample slide deck
+## Sample slide deck.  Build > Render Project for optimal viewing.
 ```
 
-##  References {.unnumbered}
+## References {.unnumbered}
 
 ::: {#refs}
 :::
