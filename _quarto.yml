@@ -1,0 +1,12 @@
+project:
+  title: "investigate_repro_workflows"
+
+editor: visual
+
+format:
+  html:
+    toc: true
+    comments:
+      hypothesis: true
+  docx: default
+  pdf: default

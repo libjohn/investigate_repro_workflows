@@ -1,0 +1,140 @@
+---
+title: Investigations into celestial escapades
+author:
+  - name: John Little
+    orcid: 0000-0002-3600-0972
+    corresponding: true
+    email: random_email@sumair.org
+    roles: []
+    affiliations:
+      - Duke University Libraries
+  - name: Dr. Lillian Thurman
+    orcid: 0000-0002-0760-5497
+    corresponding: false
+    roles: []
+    affiliations:
+      - Stepford & Associates
+keywords:
+  - Births
+  - Starwars
+  - Timeline
+abstract: |
+  Based on work [Quarto Manuscript](https://quarto.org/docs/manuscripts/) work by C.Wickham, (Purves, and Cockett, et. al.): Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ...
+plain-language-summary: |
+  A sample Quarto project demonstrates coding notebooks and report expression rendering...
+key-points:
+  - A sample of _Star Wars_ Character births were represented along a timeline
+  - A different sample of the same population were scatter-plotted along an x-y axis 
+  - Sample slides were generated from the report
+  - An embeded analysis notebook is included and the outcomes are embedded into the main report.
+date: last-modified
+bibliography: references.bib
+citation:
+  container-title: Journal of the manipulated realms of the parallell universe
+number-sections: true
+---
+
+```{r}
+#| warning: false
+#| message: false
+library(tidyverse)
+```
+
+## Introduction
+
+```{r}
+births <- sort(sample(unique(dplyr::starwars$birth_year), 8))
+```
+
+```{r}
+#| label: fig-timeline
+#| fig-cap: Timeline of recent earthquakes on La Palma
+#| fig-alt: An event plot of the years of the last 8 eruptions on La Palma.
+#| fig-height: 1.5
+#| fig-width: 6
+
+
+set.seed(1000)
+births_df <- starwars |> 
+  drop_na(birth_year) |> 
+  slice_sample(n = 8) 
+
+births_df |> 
+  ggplot(aes(birth_year, !is.na(birth_year))) +
+  geom_point() +
+  labs(x = "Year", y = "Birth") +
+  theme_bw() +
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank()) 
+```
+
+```{r}
+#| output: false
+avg_years_between_births <- births_df |>
+  arrange(birth_year) |> 
+  mutate(diff = birth_year - lag(birth_year)) |> 
+  summarise(avg = round(mean(diff, na.rm = TRUE), 1)) |> 
+  pull(avg)
+```
+
+Based on data up to and including 2019, births in the _Star Wars_ multiverse can be said to happen every `{r} round(avg_years_between_births, 1)` years on average.
+
+In an unrelated gambit to behave in a more scholarly fashion, the authors reference, @lipset1960.  Lipset discussed the nature of democracy and the role of party representation.  His paper highlights the difference in understanding of democracy between sociologists and laymen. While public opinion often emphasizes the freedom of citizens to elect representatives, sociologists focus on the social processes and elites that influence these democratic systems.
+
+A sampling of eight births were recorded since star-date zero (@fig-timeline).
+
+Data and methods are discussed in @sec-data-methods.
+
+Let $x$ denote the number of births in a year. Then, $x$ can be modeled by a Poisson distribution
+
+$$
+p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
+$$ {#eq-poisson}
+
+where $\lambda$ is the rate of births per year. Using @eq-poisson, the probability of a birth in the next $t$ years can be calculated.
+
+Below is a table generated from a data frame and presented via the {gt} backage
+
+```{r}
+births_df |> 
+  select(name, birth_year) |> 
+  gt::gt()
+```
+
+However, more basic tables can be presented with Markdown as the situation demands.
+
+| Name        | Hair Color |
+|-------------|------------|
+| Adi Gallia  | none       |
+| Dormé       | brown      |
+| Zam Wessell | blonde     |
+| Taun We     | none       |
+| Jocasta Nu  | white      |
+| Shaak Ti    | none       |
+
+: Recent historic eruptions on La Palma {#tbl-history}
+
+@tbl-history summarises the eruptions recorded since the colonization of the islands by Europeans in the late 1400s.
+
+![The Epsilon Eridani system](images/epsilon_eridani_system_randyfmcdonald_cc-by-nc-sa.jpg){#fig-map}
+
+La Palma is one of the west most islands in the Volcanic Archipelago of the Canary Islands (@fig-map).
+
+{{< embed notebooks/starwars_mass-height.qmd#fig-spatial-plot >}}
+
+@fig-spatial-plot shows the location of recent Earthquakes on La Palma.
+
+## Data & Methods {#sec-data-methods}
+
+## Conclusion
+
+## Slides
+
+``` {.markdown code-preview="slides/hello_world.qmd"}
+## Sample slide deck
+```
+
+##  References {.unnumbered}
+
+::: {#refs}
+:::

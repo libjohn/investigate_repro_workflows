@@ -1,0 +1,37 @@
+---
+title: Starwars Characters
+author: John Little
+---
+
+```{r}
+library(tidyverse)
+```
+
+Import data
+
+```{r}
+# for example
+# foo_df <- read_csv("foo.csv")
+
+# but we'll use dplyr::starwars
+
+data(starwars)
+```
+
+Create spatial plot:
+
+```{r}
+#| label: fig-spatial-plot
+#| fig-cap: "Starwars characters: mass over height"
+#| fig-alt: "A scatterplot of mass over height for select characters
+#|   in the _Star Wars_ franchise."
+
+starwars |> 
+  filter(mass < 500) |> 
+  drop_na(mass) |> 
+  ggplot(aes(height, mass)) +
+  geom_jitter(aes(color = gender)) +
+  geom_smooth(method = lm, se = FALSE) +
+  scale_color_brewer(palette = "Dark2") +
+  theme_minimal()
+```
