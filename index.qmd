@@ -3,14 +3,14 @@ title: Investigations into celestial escapades
 author:
   - name: John Little
     orcid: 0000-0002-3600-0972
-    corresponding: true
-    email: random_email@sumair.org
+    corresponding: false
     roles: []
     affiliations:
       - Duke University Libraries
-  - name: Dr. Lillian Thurman
+  - name: Lillian Thurman
     orcid: 0000-0002-0760-5497
-    corresponding: false
+    corresponding: true
+    email: hypnotherapy@thurman.org    
     roles: []
     affiliations:
       - Stepford & Associates
@@ -68,6 +68,7 @@ births_df |>
 ```
 
 ```{r}
+#| label: fig-avg-years-between-births
 #| output: false
 avg_years_between_births <- births_df |>
   arrange(birth_year) |> 
@@ -95,6 +96,8 @@ where $\lambda$ is the rate of births per year. Using @eq-poisson, the probabili
 Below is a table generated from a data frame and presented via the {gt} package
 
 ```{r}
+#| label: tbl-births
+#| tbl-cap: A table of *Star Wars* characters and their birth years
 births_df |> 
   select(name, birth_year) |> 
   gt::gt() |> 
@@ -104,7 +107,7 @@ births_df |>
   )
 ```
 
-However, more basic tables can be presented with Markdown as the situation demands.
+However, as the situation demands, more basic tables can be presented with Markdown.
 
 | Name        | Hair Color |
 |-------------|------------|
@@ -115,21 +118,25 @@ However, more basic tables can be presented with Markdown as the situation deman
 | Jocasta Nu  | white      |
 | Shaak Ti    | none       |
 
-: Recent historic eruptions on La Palma {#tbl-history}
+: Minor *Star Wars* characters and their hair color {#tbl-hair-color}
 
-@tbl-history summarises the eruptions recorded since the colonization of the islands by Europeans in the late 1400s.
+@tbl-births lists the birth years of a sample of *Star Wars* characters. Meanwhile, @tbl-hair-color summarises Minor *Star Wars* characters and their hair color.
 
 ![The Epsilon Eridani system](images/epsilon_eridani_system_randyfmcdonald_cc-by-nc-sa.jpg){#fig-map}
 
-La Palma is one of the west most islands in the Volcanic Archipelago of the Canary Islands (@fig-map).
+Epsilon Eridani is visible from most of Earth's surface. Located at a distance 10.5 light-years (3.2 parsecs) from the Sun (@fig-map).
+
+Also notable is the ability to perform calculations in notebooks. This means multiple computation notebooks can be used in a project. Outputs and artifacts of those notebooks, then, can be embedded in the main manuscript page, or other notebooks. Below @fig-spatial-plot is an embedded figure derived from a separate notebook file.
 
 {{< embed notebooks/starwars_mass-height.qmd#fig-spatial-plot >}}
 
-@fig-spatial-plot shows the location of recent Earthquakes on La Palma.
+@fig-spatial-plot shows the relationship of mass over height for a sample of \_Star Wars\* characters.
 
 ## Data & Methods {#sec-data-methods}
 
 ## Conclusion
+
+(A), Let's not forget how cool @fig-timeline is. But, (B), don't forget (A).
 
 ## References {.unnumbered}
 

@@ -11,7 +11,7 @@ Import data
 
 ```{r}
 # for example
-# foo_df <- read_csv("foo.csv")
+# dining_df <- read_csv("brodhead_center.csv")
 
 # but we'll use dplyr::starwars
 
