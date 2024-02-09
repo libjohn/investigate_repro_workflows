@@ -6,7 +6,9 @@ author:
     corresponding: false
     roles: []
     affiliations:
-      - Duke University Libraries
+      - name: Center for Data and Visualization Sciences
+        url: https://library.duke.edu/data
+      - name: Duke University Libraries
   - name: Lillian Thurman
     orcid: 0000-0002-0760-5497
     corresponding: true
@@ -18,8 +20,9 @@ keywords:
   - Births
   - Starwars
   - Timeline
+license: "CC BY"
 abstract: |
-  Based on [Quarto Manuscript](https://quarto.org/docs/manuscripts/) work by Posti.co, C.Wickham, (Purves, and Cockett, et. al.): Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ...
+  Based on [Quarto Manuscript](https://quarto.org/docs/manuscripts/) work by Posit.co, C.Wickham, Purves, and Cockett, et. al.: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ...
 plain-language-summary: |
   A sample Quarto project demonstrates coding notebooks and report expression rendering...
 key-points:
@@ -30,7 +33,7 @@ key-points:
 date: last-modified
 bibliography: references.bib
 citation:
-  container-title: Journal of the manipulated realms of the parallell universe
+  container-title: Journal of the manipulated realms of a parallell universe
 number-sections: true
 ---
 
@@ -47,8 +50,8 @@ births <- sort(sample(unique(dplyr::starwars$birth_year), 8))
 
 ```{r}
 #| label: fig-timeline
-#| fig-cap: Timeline of recent earthquakes on La Palma
-#| fig-alt: An event plot of the years of the last 8 eruptions on La Palma.
+#| fig-cap: Timeline of Births in Star Wars
+#| fig-alt: An event plot of the birth years of a sample of Star Wars characters.
 #| fig-height: 1.5
 #| fig-width: 6
 
@@ -79,7 +82,7 @@ avg_years_between_births <- births_df |>
 
 Based on data up to and including 2019, births in the *Star Wars* multiverse can be said to happen every `{r} round(avg_years_between_births, 1)` years on average.
 
-In an unrelated gambit to behave in a more scholarly fashion, the authors reference, @lipset1960. Lipset discussed the nature of democracy and the role of party representation. His paper highlights the difference in understanding of democracy between sociologists and laymen. While public opinion often emphasizes the freedom of citizens to elect representatives, sociologists focus on the social processes and elites that influence these democratic systems.
+In an unrelated gambit to emulate a fashion of scholarly writing, this author references, @lipset1960. Lipset discussed the nature of democracy and the role of party representation. His paper highlights the difference in understanding of democracy between sociologists and laymen. While public opinion often emphasizes the freedom of citizens to elect representatives, sociologists focus on the social processes and elites that influence these democratic systems.
 
 A sampling of eight births were recorded since star-date zero (@fig-timeline).
 
