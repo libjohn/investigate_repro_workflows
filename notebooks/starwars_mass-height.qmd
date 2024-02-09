@@ -30,8 +30,9 @@ starwars |>
   filter(mass < 500) |> 
   drop_na(mass) |> 
   ggplot(aes(height, mass)) +
+  geom_smooth(method = lm, se = FALSE, color = "grey80") +
   geom_jitter(aes(color = gender)) +
-  geom_smooth(method = lm, se = FALSE) +
-  scale_color_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Set1",
+                     na.value = "goldenrod") +
   theme_minimal()
 ```
