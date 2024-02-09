@@ -13,3 +13,4 @@ format:
       hypothesis: true
   docx: default
   pdf: default
+  jats: default  
