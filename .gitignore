@@ -4,6 +4,7 @@
 /.quarto/
 /_manuscript
 /index_files
+/_publish.yml
 
 /agujournal2019.cls
 /trackchanges.sty
