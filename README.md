@@ -15,7 +15,7 @@
 4.  in `_quarto.yml` change `jats: default` to `pdf: default`
     -   JATS makes this cool MECA Bundle but I found that harder to deal with in a training context; YMMV. I think only some authors will need that. Therefore KISS.
 
-## Published to
+## [Publish](https://quarto.org/docs/publishing/): a select list of options
 
 -   drop-and-drag into **netlify**.com: <https://vermillion-sunshine-2799f6.netlify.app/>
 
