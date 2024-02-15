@@ -17,12 +17,11 @@
 
 ## Published to
 
--   drop-and-drag into netlify.com: <https://vermillion-sunshine-2799f6.netlify.app/>
+-   drop-and-drag into **netlify**.com: <https://vermillion-sunshine-2799f6.netlify.app/>
 
--   quarto.pub
+-   **quarto.pub**
 
     -   login to https://quarto.pub
-
     -   In RStudio terminal: `quarto publish` \> `Quarto Pub`
 
--   Publishing to github pages is also possible. (Only I personally find that option harder. YMMV.)
+-   Publishing to **GitHub Pages** is also possible. (Only I personally find that option harder. YMMV.)
