@@ -4,7 +4,7 @@ project:
 editor: visual
 
 execute:
-  freeze: auto
+  freeze: true
   
 format:
   html:
